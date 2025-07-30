@@ -37,7 +37,7 @@ jobs:
         run: cp -R ./opentelemetry-collector-releases/cmd/builder/. ./.core/cmd/builder/
 
       - name: Copy .git
-        run: cp -R ./opentelemetry-collector-releases/.git ./.core/cmd/builder/
+        run: cp -R ./opentelemetry-collector-releases/.git ./.core/
 
       - uses: sigstore/cosign-installer@d7d6bc7722e3daa8354c50bcb52f4837da5e9b6a # v3.8.1
 
