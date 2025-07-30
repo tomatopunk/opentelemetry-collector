@@ -49,6 +49,16 @@ jobs:
         with:
           go-version: "~1.24"
 
+      - name: debug ls
+        run: |
+          ls -all
+
+      - name: debug git
+        run: |
+          cd ./opentelemetry-collector-releases
+          git remote -v
+          git rev-parse --is-inside-work-tree
+
       - name: Check GoReleaser
         uses: goreleaser/goreleaser-action@90a3faa9d0182683851fbfa97ca1a2cb983bfca3 # v6.2.1
         with:
