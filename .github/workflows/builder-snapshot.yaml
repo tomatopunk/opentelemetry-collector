@@ -31,6 +31,10 @@ jobs:
           path: opentelemetry-collector-releases
           repository: open-telemetry/opentelemetry-collector-releases
 
+      - name: Workaround Git Security Warning
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"   
+
       - name: Copy release files
         run: cp -R ./opentelemetry-collector-releases/cmd/builder/. ./.core/cmd/builder/
 
