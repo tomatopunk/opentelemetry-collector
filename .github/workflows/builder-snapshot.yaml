@@ -51,11 +51,11 @@ jobs:
 
       - name: debug ls
         run: |
-          ls -all .core
+          ls -all ./opentelemetry-collector-releases
 
       - name: debug git
         run: |
-          cd .core
+          cd ./opentelemetry-collector-releases
           git remote -v
           git rev-parse --is-inside-work-tree
 
