@@ -51,11 +51,11 @@ jobs:
 
       - name: debug ls
         run: |
-          ls -all
+          ls -all .core
 
       - name: debug git
         run: |
-          cd ./opentelemetry-collector-releases
+          cd .core
           git remote -v
           git rev-parse --is-inside-work-tree
 
@@ -64,7 +64,7 @@ jobs:
         with:
           distribution: goreleaser-pro
           version: ${{ env.GORELEASER_PRO_VERSION }}
-          args: check --verbose -f .github/.goreleaser.yml
+          args: check --verbose -f .core/.github/.goreleaser.yml
         env:
           GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -74,7 +74,7 @@ jobs:
         with:
           distribution: goreleaser-pro
           version: ${{ env.GORELEASER_PRO_VERSION }}
-          args: --snapshot --clean -f .github/.goreleaser.yml
+          args: --snapshot --clean -f .core/.github/.goreleaser.yml
         env:
           GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
